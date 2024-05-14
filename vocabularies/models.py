@@ -31,7 +31,16 @@ class Translation(models.Model):
     example = models.TextField(null=False)
 
     def __str__(self):
-        return self
+        return (f"Vocab: {self.vocab}, "
+                f"Part of Speech: {self.pos}, "
+                f"Vocab VN: {self.vocab_vn}, "
+                f"Definition: {self.definition}, "
+                f"Spelling: {self.spelling}, "
+                f"Example: {self.example}")
+
+    class Meta:
+        verbose_name = 'translation'
+        verbose_name_plural = 'translations'
 
     class Meta:
         db_table = 'Translation'

@@ -1,4 +1,3 @@
-import datetime
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from datetime import datetime
@@ -27,7 +26,7 @@ class UserManager(BaseUserManager):
 class UserAccount(AbstractBaseUser):
     username = models.CharField(max_length=100, unique=True)
     fullname = models.CharField(max_length=100, null=True)
-    register_at = models.DateTimeField(auto_now_add=True, null=False)
+    registered_at = models.DateTimeField(auto_now_add=True, null=False)  # Changed to registered_at
     image = models.TextField(null=True)
     is_admin = models.BooleanField(default=False)
 
