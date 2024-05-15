@@ -1,0 +1,226 @@
+
+{% extends 'base_template.html' %} 
+{% load static %}
+{% block title %} 
+Search
+{% endblock title %} 
+{% block custom_css %} 
+<link rel="stylesheet" href="{%static 'css/create.css' %}" />
+{% endblock custom_css %}
+{% block body_data %}
+    <div
+      style="
+        margin-top: 70px !important;
+        max-width: 100%;
+        background-color: #f6f7fb;
+      "
+    >
+      <div
+        class="container_editLesson"
+        style="margin: 0 15% 0 15%; max-width: 1440px"
+      >
+        <form
+          method="POST"
+          action="/handle_create"
+          id="createForm"
+        >
+          {% csrf_token %}
+          <div class="header_title">
+            <div class="item_1" style="padding: 20px 0px">
+              <span style="font-size: 1.3rem; color: black; font-weight: 500">
+                Tạo từ điển mới
+              </span>
+            </div>
+            <div class="item_2"></div>
+          </div>
+          <div class="title">
+            <input
+              placeholder='Nhập tiêu đề, ví dụ "Từ vựng Toeic ETS 2024"'
+              style="
+                width: 100%;
+                height: 100%;
+                font-size: 1.1rem;
+                font-weight: 600;
+                border-radius: 10px;
+                color: #282e3e;
+                padding-left: 30px !important;
+                filter: none;
+                cursor: text;
+                background-color: white;
+                height: 50px;
+              "
+              name="name_dictionary"
+            />
+          </div>
+          <div class="container-items">
+            <div class="item">
+              <div
+                class="header_input"
+                key="index_1"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                "
+              >
+                <span class="index">1</span>
+                <button
+                  type="button"
+                  class="btn btn-outline-danger"
+                  style="width: 60px; height: 40px; border: 1px solid #bdbdbd"
+                >
+                  Xoá
+                </button>
+              </div>
+              <div class="partition"></div>
+              <div class="content">
+                <div class="left">
+                  <div class="inputText">
+                    <input
+                      type="text"
+                      style="
+                        font-size: 1.1rem;
+                        border: none;
+                        width: 100%;
+                        height: 40px;
+                      "
+                      name="value_en_1"
+                    />
+                  </div>
+                  <div class="divider"></div>
+                  <span class="footer">Thuật ngữ</span>
+                </div>
+                <div class="right">
+                  <div class="inputText">
+                    <input
+                      type="text"
+                      style="
+                        font-size: 1.1rem;
+                        border: none;
+                        width: 100%;
+                        height: 40px;
+                      "
+                      name="value_vi_1"
+                    />
+                  </div>
+                  <div class="divider"></div>
+                  <span class="footer">Định nghĩa</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="div-AddCard">
+            <div class="content">
+              <span class="text">Thêm thẻ</span>
+            </div>
+            <div class="footer"></div>
+          </div>
+          <div class="divSubmit">
+            <button type="submit" class="btn btn-primary">Hoàn tất</button>
+          </div>
+        </form>
+      </div>
+    </div>
+{% endblock body_data %}
+
+
+    {% block custom_js %}
+    <script>
+      function addNewItem() {
+        // Find the container element where new item will be added
+        const container = document.querySelector(".container-items");
+
+        // Create a new item element
+        const newItem = document.createElement("div");
+        newItem.className = "item";
+
+        // Set inner HTML content for the new item
+        newItem.innerHTML = `
+      <div class="header_input" key="index_${
+        container.children.length + 1
+      }"  style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              ">
+        <span class="index">${container.children.length + 1}</span>
+        <button type="button" class="btn btn-outline-danger" style="width: 60px; height: 40px; border: 1px solid #bdbdbd">Xoá</button>
+      </div>
+      <div class="partition"></div>
+      <div class="content">
+        <div class="left">
+          <div class="inputText">
+            <input type="text" style="font-size: 1.1rem; border: none; width: 100%; height: 40px;" name='value_en_${
+              container.children.length + 1
+            }' />
+          </div>
+          <div class="divider"></div>
+          <span class="footer">Thuật ngữ</span>
+        </div>
+        <div class="right">
+          <div class="inputText">
+            <input type="text" style="font-size: 1.1rem; border: none; width: 100%; height: 40px;" name='value_vi_${
+              container.children.length + 1
+            }'/>
+          </div>
+          <div class="divider"></div>
+          <span class="footer">Định nghĩa</span>
+        </div>
+      </div>
+    `;
+
+        // Append the new item to the container
+        container.appendChild(newItem);
+
+        const deleteButtons = document.querySelectorAll(".btn-outline-danger");
+        deleteButtons.forEach((button) => {
+          button.addEventListener("click", handleDeleteClick);
+        });
+      }
+
+      document
+        .querySelector(".div-AddCard")
+        .addEventListener("click", addNewItem);
+
+      //delete
+
+      function handleDeleteClick(event) {
+        // Find the parent item element to be deleted
+        const itemToDelete = event.target.closest(".item");
+        if (itemToDelete) {
+          // Remove the item from the DOM
+          itemToDelete.remove();
+          // Update indexes for remaining items
+          updateItemIndexes();
+        }
+      }
+
+      // Function to update indexes for items after deletion
+      function updateItemIndexes() {
+        // Find all item elements
+        const items = document.querySelectorAll(".item");
+        // Loop through items and update indexes
+        items.forEach((item, index) => {
+          const itemIndex = index + 1;
+          item.querySelector(".index").textContent = itemIndex;
+          // Update names of input fields
+          const inputs = item.querySelectorAll("input");
+          inputs.forEach((input) => {
+            const nameParts = input.name.split("_");
+            nameParts[nameParts.length - 1] = itemIndex.toString();
+            input.name = nameParts.join("_");
+          });
+        });
+      }
+
+      // Add click event listener to all delete buttons
+      const deleteButtons = document.querySelectorAll(".btn-outline-danger");
+      deleteButtons.forEach((button) => {
+        button.addEventListener("click", handleDeleteClick);
+      });
+    </script>
+    {% endblock custom_js %}
+
+
+

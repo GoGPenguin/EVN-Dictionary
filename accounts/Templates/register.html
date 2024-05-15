@@ -1,0 +1,210 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{%static 'css/login.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    
+    <style>
+      /* Điều chỉnh kích thước font cho placeholder */
+      .form-control-lg::placeholder {
+        font-size: 16px; /* Điều chỉnh kích thước font tùy theo nhu cầu */
+      }
+      .form-control-lg {
+        font-size: 1.5rem !important;
+      }
+      .mb-3 {
+        margin-bottom: 1rem !important; /* Điều chỉnh giá trị margin-bottom tùy theo nhu cầu */
+      }
+       #formRegister input {
+            font-size: 1.2rem !important; /* Thay đổi kích thước phông chữ tại đây */
+        }
+    </style>
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-left">
+        <img src="{% static 'image/imageLogin.png' %}" alt="" />
+        <div class="login-left__text">
+          <span class="title">Học hiệu quả mà thật thoải mái.</span>
+        </div>
+        <span class="logo">Quizlet</span>
+      </div>
+      <div class="login-right">
+        <div class="div-login">
+          <div style="display: flex; justify-content: flex-end">
+            <i class="fa-solid fa-x" style="cursor: pointer" id="xIcon"></i>
+          </div>
+          <div style="display: flex; gap: 10px">
+            <button
+              type="button"
+              class="btn btn-primary"
+              style="
+                width: 160px;
+                height: 45px;
+                font-weight: 700;
+                font-size: 23px;
+              "
+            >
+              Đăng ký
+            </button>
+            <a
+              class="btn btn-light"
+              href="/account/login"
+              role="button"
+              style="
+                width: 160px;
+                height: 45px;
+                font-weight: 700;
+                font-size: 23px;
+              "
+              >Đăng nhập</a
+            >
+          </div>
+
+          <div class="divider" style="width: 100%; margin-top: -10px">
+            <hr />
+            <div style="text-align: center">Or Email</div>
+          </div>
+
+          <div class="formInput">
+            <form name="formRegister" 
+            method="post"               
+            action="/account/handle_register"
+              id="formRegister" >
+              {% csrf_token %}
+              <div class="mb-3">
+                <label for="inputEmail" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control form-control-lg"
+                  id="inputEmail"
+                  placeholder="Nhập địa chỉ email của bạn"
+                  name="inputEmail"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="inputPassword" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control form-control-lg"
+                  class="form-control"
+                  id="inputPassword"
+                  placeholder="Nhập địa chỉ mật khẩu của bạn"
+                  name="inputPassword"
+                />
+         
+              </div>
+
+              <div class="mb-3">
+                <label for="inputConfirmPassword" class="form-label"
+                  >Confirm Password</label
+                >
+
+        
+                <input
+                  type="password"
+                  class="form-control form-control-lg"
+                  id="inputConfirmPassword"
+                  placeholder="Nhập địa chỉ mật khẩu xác thực"
+                  name="inputConfirmPassword"
+                />
+              </div>
+              <div class="mb-3">
+                <button type="submit" class="btn btn-primary btnLogin">
+                  Đăng ký
+                </button>
+              </div>
+              <div class="mb-3">
+                <a
+                  class="btn btn-outline-primary"
+                  href="/account/login"
+                  role="button"
+                  style="width: 100%; height: 60px; line-height: 50px"
+                >
+                  Bạn đã có tài khoản? Đăng nhập ngay</a
+                >
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#formRegister').on('submit', function(event) {
+                var email = $('#inputEmail').val();
+                var password = $('#inputPassword').val();
+                var confirmPassword = $('#inputConfirmPassword').val();
+                var isValid = true;
+                
+                // Clear previous errors
+                $('.form-control').removeClass('is-invalid');
+                $('.invalid-feedback').remove();
+
+                // Validate email
+                if (!email) {
+                    $('#inputEmail').addClass('is-invalid');
+                    $('#inputEmail').after('<div class="invalid-feedback">Email là bắt buộc.</div>');
+                    isValid = false;
+                } else {
+                    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(email)) {
+                        $('#inputEmail').addClass('is-invalid');
+                        $('#inputEmail').after('<div class="invalid-feedback">Email không hợp lệ.</div>');
+                        isValid = false;
+                    }
+                }
+
+                // Validate password
+                if (!password) {
+                    $('#inputPassword').addClass('is-invalid');
+                    $('#inputPassword').after('<div class="invalid-feedback">Mật khẩu là bắt buộc.</div>');
+                    isValid = false;
+                }
+
+                // Validate confirm password
+                if (!confirmPassword) {
+                    $('#inputConfirmPassword').addClass('is-invalid');
+                    $('#inputConfirmPassword').after('<div class="invalid-feedback">Xác nhận mật khẩu là bắt buộc.</div>');
+                    isValid = false;
+                } else if (password !== confirmPassword) {
+                    $('#inputConfirmPassword').addClass('is-invalid');
+                    $('#inputConfirmPassword').after('<div class="invalid-feedback">Mật khẩu xác nhận không khớp.</div>');
+                    isValid = false;
+                }
+
+                // Prevent form submission if any field is invalid
+                if (!isValid) {
+                    event.preventDefault();
+                }
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+    // Lấy đối tượng icon theo id
+    const xIcon = document.getElementById('xIcon');
+    
+    // Thêm sự kiện click cho icon
+    xIcon.addEventListener('click', function() {
+        // Chuyển hướng trang về ''
+        window.location.href = '/';
+    });
+});
+    </script>
+  </body>
+</html>

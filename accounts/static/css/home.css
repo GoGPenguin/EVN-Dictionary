@@ -1,0 +1,1073 @@
+.div-homepage {
+  height: max-content;
+}
+.div-homepage .div-image {
+  width: 100%;
+  height: 700px;
+  position: relative;
+}
+.div-homepage .div-image img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  object-position: center;
+}
+.div-homepage .div-image .div-text {
+  position: absolute;
+  width: 40%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+  left: 10%;
+  top: 15%;
+}
+.div-homepage .div-image .div-text .div-text__one h2 {
+  color: white;
+  font-size: 43px;
+}
+.div-homepage .div-image .div-text .div-text__two span {
+  color: white;
+  font-size: 21px;
+  font-weight: 100 !important;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.div-homepage .div-image .div-text .div-text__btn {
+  margin-top: 50px;
+}
+.div-homepage .div-image .div-text .div-text__btn span {
+  font-weight: 500;
+  font-size: 15px;
+}
+.div-homepage .div-Title {
+  width: 100%;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.div-homepage .div-Title span {
+  display: block;
+  width: 70%;
+  height: auto;
+  font-size: 38px;
+  font-weight: 600;
+  color: black;
+  text-align: center;
+}
+.div-homepage .div-Remember {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+.div-homepage .div-Remember .div-Remember_left {
+  width: 500px;
+  height: 310px;
+  position: relative;
+  border-radius: 10px;
+}
+.div-homepage .div-Remember .div-Remember_left img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.div-homepage .div-Remember .div-Remember_right {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.div-homepage .div-Remember .div-Remember_right .div-text__one h2 {
+  color: black;
+  font-size: 38px;
+  display: block;
+  width: 90%;
+}
+.div-homepage .div-Remember .div-Remember_right .div-text__two {
+  width: 90%;
+}
+.div-homepage .div-Remember .div-Remember_right .div-text__two span {
+  color: black;
+  font-size: 22px;
+  font-weight: 100 !important;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.div-homepage .div-Remember .div-Remember_right .div-text__btn .btnDivTextOne {
+  margin-top: 50px;
+  width: 170px;
+  height: 50px;
+}
+.div-homepage
+  .div-Remember
+  .div-Remember_right
+  .div-text__btn
+  .btnDivTextOne
+  span {
+  font-weight: 500;
+  font-size: 15px;
+}
+.div-homepage .div-mobile {
+  max-width: 1440px;
+  margin: 100px auto 0px auto;
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  flex-wrap: wrap;
+}
+.div-homepage .div-mobile .div-Remember_left {
+  width: 450px;
+  height: 450px;
+  position: relative;
+  border-radius: 20px;
+}
+.div-homepage .div-mobile .div-Remember_left img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+}
+.div-homepage .div-mobile .div-Remember_right {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.div-homepage .div-mobile .div-Remember_right .div-text__one h2 {
+  color: black;
+  font-size: 38px;
+  display: block;
+  width: 90%;
+}
+.div-homepage .div-mobile .div-Remember_right .div-text__two {
+  width: 90%;
+}
+.div-homepage .div-mobile .div-Remember_right .div-text__two span {
+  color: black;
+  font-size: 22px;
+  font-weight: 100 !important;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.div-homepage .div-LearnAndTest {
+  max-width: 1440px;
+  margin: 100px auto 0px auto;
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap-reverse;
+}
+.div-homepage .div-LearnAndTest .div-LearnAndTest_left {
+  width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.div-homepage .div-LearnAndTest .div-LearnAndTest_left .title h2 {
+  color: black;
+  font-size: 38px;
+  display: block;
+  width: 90%;
+}
+.div-homepage .div-LearnAndTest .div-LearnAndTest_left .text span {
+  color: black;
+  font-size: 22px;
+  font-weight: 100 !important;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.div-homepage .div-LearnAndTest .div-LearnAndTest_left .listTask {
+  display: flex;
+  flex-direction: column;
+}
+.div-homepage
+  .div-LearnAndTest
+  .div-LearnAndTest_left
+  .listTask
+  .listTask-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.div-homepage
+  .div-LearnAndTest
+  .div-LearnAndTest_left
+  .listTask
+  .listTask-item
+  .div-Icon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.div-homepage
+  .div-LearnAndTest
+  .div-LearnAndTest_left
+  .listTask
+  .listTask-item
+  .div-Icon
+  img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  object-position: center;
+}
+.div-homepage
+  .div-LearnAndTest
+  .div-LearnAndTest_left
+  .listTask
+  .listTask-item
+  .div-Text {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  gap: -10px;
+}
+.div-homepage
+  .div-LearnAndTest
+  .div-LearnAndTest_left
+  .listTask
+  .listTask-item
+  .div-Text
+  p {
+  display: block;
+  color: black;
+  font-size: 20px;
+  height: 13px;
+  font-weight: 600;
+}
+.div-homepage
+  .div-LearnAndTest
+  .div-LearnAndTest_left
+  .listTask
+  .listTask-item
+  .div-Text
+  span {
+  display: block;
+  color: black;
+  font-size: 18px;
+  font-weight: 100 !important;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.div-homepage .div-LearnAndTest .div-LearnAndTest_left .btn span {
+  font-weight: 500;
+  font-size: 15px;
+}
+.div-homepage .div-LearnAndTest .div-LearnAndTest_right {
+  width: 500px;
+  height: 700px;
+  position: relative;
+  border-radius: 10px;
+}
+.div-homepage .div-LearnAndTest .div-LearnAndTest_right img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.div-homepage .div-Math {
+  max-width: 1440px;
+  margin: 100px auto 0px auto;
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap-reverse;
+  flex-direction: row-reverse;
+}
+.div-homepage .div-Math .div-Math_left {
+  width: 600px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.div-homepage .div-Math .div-Math_left .title h2 {
+  color: black;
+  font-size: 38px;
+  display: block;
+  width: 90%;
+}
+.div-homepage .div-Math .div-Math_left .text span {
+  color: black;
+  font-size: 22px;
+  font-weight: 100 !important;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.div-homepage .div-Math .div-Math_left .listTask {
+  display: flex;
+  flex-direction: column;
+}
+.div-homepage .div-Math .div-Math_left .listTask .listTask-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.div-homepage .div-Math .div-Math_left .listTask .listTask-item .div-Icon {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.div-homepage .div-Math .div-Math_left .listTask .listTask-item .div-Icon img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  object-position: center;
+}
+.div-homepage .div-Math .div-Math_left .listTask .listTask-item .div-Text {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  gap: -10px;
+}
+.div-homepage .div-Math .div-Math_left .listTask .listTask-item .div-Text p {
+  display: block;
+  color: black;
+  font-size: 20px;
+  height: 13px;
+  font-weight: 600;
+}
+.div-homepage .div-Math .div-Math_left .listTask .listTask-item .div-Text span {
+  display: block;
+  color: black;
+  font-size: 18px;
+  font-weight: 100 !important;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.div-homepage .div-Math .div-Math_left .btn span {
+  font-weight: 500;
+  font-size: 15px;
+}
+.div-homepage .div-Math .div-Math_right {
+  width: 500px;
+  height: 700px;
+  position: relative;
+  border-radius: 10px;
+}
+.div-homepage .div-Math .div-Math_right img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.div-homepage .div-Comment {
+  max-width: 1440px;
+  margin: -50px auto;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.div-homepage .div-Comment .div-Comment__item {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  box-shadow: 0 0.25rem 1rem 0 #282e3e 14;
+}
+.div-homepage .div-Comment .div-Comment__item .div-image {
+  width: 100%;
+  height: 225px;
+  position: relative;
+  border-radius: 10px;
+}
+.div-homepage .div-Comment .div-Comment__item .div-image img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.div-homepage .div-Comment .div-Comment__item .div-text {
+  padding: 30px 20px;
+}
+.div-homepage .div-Comment .div-Comment__item .div-text .comment {
+  display: block;
+  color: black;
+  font-size: 18px;
+}
+.div-homepage .div-Comment .div-Comment__item .div-text .university {
+  margin-top: 30px;
+  display: block;
+  color: #bdbdbd;
+  font-size: 14px;
+}
+.div-homepage .div-Teacher {
+  width: 100%;
+  margin: 150px auto 0px auto;
+  padding: 150px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  background-color: #dbdfff;
+}
+.div-homepage .div-Teacher .div-Teacher_left {
+  width: 450px;
+  height: 500px;
+  position: relative;
+  border-radius: 10px;
+}
+.div-homepage .div-Teacher .div-Teacher_left img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.div-homepage .div-Teacher .div-Teacher_right {
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.div-homepage .div-Teacher .div-Teacher_right .div-text__one h2 {
+  color: black;
+  font-size: 38px;
+  display: block;
+  width: 90%;
+}
+.div-homepage .div-Teacher .div-Teacher_right .div-text__two {
+  width: 90%;
+}
+.div-homepage .div-Teacher .div-Teacher_right .div-text__two span {
+  color: black;
+  font-size: 22px;
+  font-weight: 100 !important;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.div-homepage .div-Teacher .div-Teacher_right .div-text__btn {
+  margin-top: 50px;
+}
+.div-homepage .div-Teacher .div-Teacher_right .div-text__btn span {
+  font-weight: 500;
+  font-size: 15px;
+}
+@media only screen and (max-width: 523px) {
+  .div-homepage {
+    height: max-content;
+  }
+  .div-homepage .div-image {
+    width: 100%;
+    height: 250px;
+    position: relative;
+  }
+  .div-homepage .div-image img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+  .div-homepage .div-image .div-text {
+    position: absolute;
+    width: 40%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    left: 10%;
+    top: 15%;
+  }
+  .div-homepage .div-image .div-text .div-text__one h2 {
+    color: white;
+    font-size: 20px;
+  }
+  .div-homepage .div-image .div-text .div-text__two {
+    display: none;
+  }
+  .div-homepage .div-image .div-text .div-text__two span {
+    color: white;
+    font-size: 16px;
+    font-weight: 100 !important;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  .div-homepage .div-image .div-text .div-text__btn {
+    margin: 0;
+  }
+  .div-homepage .div-image .div-text .div-text__btn .btnDivTextOne {
+    width: 150px;
+    height: 40px;
+  }
+  .div-homepage .div-image .div-text .div-text__btn .btnDivTextOne span {
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .div-homepage .div-Title {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .div-homepage .div-Title span {
+    display: block;
+    width: 80%;
+    height: auto;
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+  }
+  .div-homepage .div-Remember {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    gap: 0;
+  }
+  .div-homepage .div-Remember .div-Remember_left {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    border-radius: 10px;
+  }
+  .div-homepage .div-Remember .div-Remember_left img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+  }
+  .div-homepage .div-Remember .div-Remember_right {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .div-homepage .div-Remember .div-Remember_right .div-text__one h2 {
+    color: black;
+    font-size: 25px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .div-homepage .div-Remember .div-Remember_right .div-text__two {
+    width: 100%;
+  }
+  .div-homepage .div-Remember .div-Remember_right .div-text__two span {
+    color: black;
+    font-size: 17px;
+    font-weight: 100 !important;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    text-align: center;
+  }
+  .div-homepage .div-Remember .div-Remember_right .div-text__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0px;
+  }
+  .div-homepage .div-Remember .div-Remember_right .div-text__btn .btnRemember {
+    width: 120px;
+    height: 40px;
+  }
+  .div-homepage
+    .div-Remember
+    .div-Remember_right
+    .div-text__btn
+    .btnRemember
+    span {
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+  }
+  .div-homepage .div-mobile {
+    max-width: 1440px;
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0;
+  }
+  .div-homepage .div-mobile .div-Remember_left {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    border-radius: 20px;
+  }
+  .div-homepage .div-mobile .div-Remember_left img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+  }
+  .div-homepage .div-mobile .div-Remember_right {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .div-homepage .div-mobile .div-Remember_right .div-text__one h2 {
+    color: black;
+    font-size: 25px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .div-homepage .div-mobile .div-Remember_right .div-text__two {
+    width: 100%;
+  }
+  .div-homepage .div-mobile .div-Remember_right .div-text__two span {
+    width: 100%;
+    color: black;
+    font-size: 17px;
+    font-weight: 100 !important;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    text-align: center;
+  }
+  .div-homepage .div-LearnAndTest {
+    max-width: 1440px;
+    margin: 0;
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap-reverse;
+  }
+  .div-homepage .div-LearnAndTest .div-LearnAndTest_left {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+  .div-homepage .div-LearnAndTest .div-LearnAndTest_left .title h2 {
+    color: black;
+    font-size: 25px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .div-homepage .div-LearnAndTest .div-LearnAndTest_left .text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .div-homepage .div-LearnAndTest .div-LearnAndTest_left .text span {
+    display: block;
+    color: black;
+    font-size: 17px;
+    font-weight: 100 !important;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    text-align: center;
+    width: 80%;
+  }
+  .div-homepage .div-LearnAndTest .div-LearnAndTest_left .listTask {
+    display: flex;
+    flex-direction: column;
+  }
+  .div-homepage
+    .div-LearnAndTest
+    .div-LearnAndTest_left
+    .listTask
+    .listTask-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .div-homepage
+    .div-LearnAndTest
+    .div-LearnAndTest_left
+    .listTask
+    .listTask-item
+    .div-Icon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+  .div-homepage
+    .div-LearnAndTest
+    .div-LearnAndTest_left
+    .listTask
+    .listTask-item
+    .div-Icon
+    img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+  .div-homepage
+    .div-LearnAndTest
+    .div-LearnAndTest_left
+    .listTask
+    .listTask-item
+    .div-Text {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    gap: -10px;
+  }
+  .div-homepage
+    .div-LearnAndTest
+    .div-LearnAndTest_left
+    .listTask
+    .listTask-item
+    .div-Text
+    p {
+    display: block;
+    color: black;
+    font-size: 18px;
+    height: 13px;
+    font-weight: 600;
+  }
+  .div-homepage
+    .div-LearnAndTest
+    .div-LearnAndTest_left
+    .listTask
+    .listTask-item
+    .div-Text
+    span {
+    display: block;
+    color: black;
+    font-size: 16px;
+    font-weight: 100 !important;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  .div-homepage .div-LearnAndTest .div-LearnAndTest_left .btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+  .div-homepage .div-LearnAndTest .div-LearnAndTest_left .btn .btnLearnAndTest {
+    width: fit-content;
+    height: 40px;
+  }
+  .div-homepage
+    .div-LearnAndTest
+    .div-LearnAndTest_left
+    .btn
+    .btnLearnAndTest
+    span {
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .div-homepage .div-LearnAndTest .div-LearnAndTest_right {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    border-radius: 10px;
+  }
+  .div-homepage .div-LearnAndTest .div-LearnAndTest_right img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+  }
+  .div-homepage .div-Math {
+    max-width: 1440px;
+    margin: 0px;
+    padding: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    flex-wrap: wrap-reverse;
+    flex-direction: row-reverse;
+  }
+  .div-homepage .div-Math .div-Math_left {
+    width: 600px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .div-homepage .div-Math .div-Math_left .title h2 {
+    color: black;
+    font-size: 25px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .div-homepage .div-Math .div-Math_left .text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .div-homepage .div-Math .div-Math_left .text span {
+    color: black;
+    font-size: 17px;
+    font-weight: 100 !important;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    width: 80%;
+  }
+  .div-homepage .div-Math .div-Math_left .listTask {
+    display: flex;
+    flex-direction: column;
+  }
+  .div-homepage .div-Math .div-Math_left .listTask .listTask-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  .div-homepage .div-Math .div-Math_left .listTask .listTask-item .div-Icon {
+    width: 50px;
+    height: 50px;
+    position: relative;
+  }
+  .div-homepage
+    .div-Math
+    .div-Math_left
+    .listTask
+    .listTask-item
+    .div-Icon
+    img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+  .div-homepage .div-Math .div-Math_left .listTask .listTask-item .div-Text {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    gap: -10px;
+  }
+  .div-homepage .div-Math .div-Math_left .listTask .listTask-item .div-Text p {
+    display: block;
+    color: black;
+    font-size: 18px;
+    height: 13px;
+    font-weight: 600;
+  }
+  .div-homepage
+    .div-Math
+    .div-Math_left
+    .listTask
+    .listTask-item
+    .div-Text
+    span {
+    display: block;
+    color: black;
+    font-size: 16px;
+    font-weight: 100 !important;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  }
+  .div-homepage .div-Math .div-Math_left .btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+  .div-homepage .div-Math .div-Math_left .btn .btnMath {
+    width: fit-content;
+    height: 40px;
+  }
+  .div-homepage .div-Math .div-Math_left .btn .btnMath span {
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .div-homepage .div-Math .div-Math_right {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    border-radius: 10px;
+  }
+  .div-homepage .div-Math .div-Math_right img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+  }
+  .div-homepage .div-Comment {
+    max-width: 1440px;
+    margin: -50px auto;
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .div-homepage .div-Comment .div-Comment__item {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    box-shadow: 0 0.25rem 1rem 0 #282e3e 14;
+  }
+  .div-homepage .div-Comment .div-Comment__item .div-image {
+    width: 100%;
+    height: 225px;
+    position: relative;
+    border-radius: 10px;
+  }
+  .div-homepage .div-Comment .div-Comment__item .div-image img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+  }
+  .div-homepage .div-Comment .div-Comment__item .div-text {
+    padding: 20px 15px;
+  }
+  .div-homepage .div-Comment .div-Comment__item .div-text .comment {
+    display: block;
+    color: black;
+    font-size: 16px;
+  }
+  .div-homepage .div-Comment .div-Comment__item .div-text .university {
+    margin-top: 30px;
+    display: block;
+    color: #bdbdbd;
+    font-size: 14px;
+  }
+  .div-homepage .div-Teacher {
+    width: 100%;
+    padding: 0;
+    margin: 50px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    background-color: #dbdfff;
+  }
+  .div-homepage .div-Teacher .div-Teacher_left {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    border-radius: 10px;
+  }
+  .div-homepage .div-Teacher .div-Teacher_left img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+  }
+  .div-homepage .div-Teacher .div-Teacher_right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-bottom: 20px;
+  }
+  .div-homepage .div-Teacher .div-Teacher_right .div-text__one {
+    display: flex;
+    justify-content: center;
+  }
+  .div-homepage .div-Teacher .div-Teacher_right .div-text__one h2 {
+    color: black;
+    font-size: 25px;
+    display: block;
+    width: 80%;
+    text-align: center;
+  }
+  .div-homepage .div-Teacher .div-Teacher_right .div-text__two {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .div-homepage .div-Teacher .div-Teacher_right .div-text__two span {
+    color: black;
+    font-size: 17px;
+    font-weight: 100 !important;
+    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+    width: 80%;
+    text-align: center;
+  }
+  .div-homepage .div-Teacher .div-Teacher_right .div-text__btn {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    margin: 0;
+  }
+  .div-homepage .div-Teacher .div-Teacher_right .div-text__btn .btnTeacher {
+    width: fit-content;
+    height: 40px;
+  }
+  .div-homepage
+    .div-Teacher
+    .div-Teacher_right
+    .div-text__btn
+    .btnTeacher
+    span {
+    font-weight: 500;
+    font-size: 15px;
+  }
+}

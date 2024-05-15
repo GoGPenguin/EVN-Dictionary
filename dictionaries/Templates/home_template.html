@@ -1,0 +1,164 @@
+
+{% extends 'base_template.html' %} 
+{% load static %}
+{% block title %} 
+Search
+{% endblock title %} 
+{% block custom_css %} 
+<link rel="stylesheet" href="{%static 'css/index.css' %}" />
+{% endblock custom_css %}
+{% block body_data %}
+    <div
+      style="
+        width: 100%;
+        height: 100%;
+        background-color: #f6f7fb;
+        margin-top: 60px;
+        padding-bottom: 50px;
+      "
+    >
+      <div class="main-container">
+        <span class="title">Một số tính năng sắp cập nhật</span>
+        <div class="divContentUpdate">
+          <div class="divContentUpdate-item">
+            <div class="divContentUpdate-item__img">
+              <img
+                src="{% static 'image/imageRemember.jpg' %}"
+                alt=""
+              />
+            </div>
+            <div
+              class="divContentUpdate-item__text"
+              style="background-color: rgba(237, 239, 255, 0.9)"
+            >
+              <span class="Label">Tìm kiếm mạnh mẽ hơn</span>
+              <span class="content"
+                >Tìm thẻ ghi nhớ bạn cần để học về bất kỳ chủ đề nào</span
+              >
+            </div>
+          </div>
+          <div class="divContentUpdate-item">
+            <div class="divContentUpdate-item__img">
+              <img src="{% static 'image/imageTest.jpg' %}" alt="" />
+            </div>
+            <div
+              class="divContentUpdate-item__text"
+              style="background-color: rgba(255, 220, 98, 0.7)"
+            >
+              <span class="Label">Cải thiện điểm số với chế độ Học</span>
+              <span class="content"
+                >Học với các câu hỏi hay hơn, kiểm soát nhiều hơn, và gợi
+                ý</span
+              >
+            </div>
+          </div>
+          <div class="divContentUpdate-item">
+            <div class="divContentUpdate-item__img">
+              <img src="{% static 'image/imageLogin.png' %}" alt="" />
+            </div>
+            <div
+              class="divContentUpdate-item__text"
+              style="background-color: rgba(238, 170, 255, 0.7)"
+            >
+              <span class="Label">Hãy sẵn sàng cho kỳ thi</span>
+              <span class="content"
+                >Kiểm tra với gợi ý và chỉ dẫn học được tăng cường AI</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-lessonComponent">
+        <span class="title">Gần đây</span>
+        <div class="lessonComponent-listItems">
+                    {% for result in data.dictionaries_info %}
+  <div class="lessonComponent-item" data-lesson-id="{{ result.list_id }}">
+    <div class="lessonComponent-item__header">
+      <div class="label">
+        <span>{{ result.list_name }}</span>
+      </div>
+      <div class="count">
+        <span>{{ result.vocab_count }} thuật ngữ</span>
+      </div>
+    </div>
+    <div class="lessonComponent-item__footer">
+      <div class="image">
+        <img
+          src="{% static 'image/imageRemember.jpg' %}"
+          alt=""
+        />
+      </div>
+      <div class="username">
+        <span>{{ user.username }}</span>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+          <!-- <div class="lessonComponent-item" data-lesson-id="2">
+            <div class="lessonComponent-item__header">
+              <div class="label">
+                <span>Từ vựng sách listening 1</span>
+              </div>
+              <div class="count">
+                <span>150 thuật ngữ</span>
+              </div>
+            </div>
+            <div class="lessonComponent-item__footer">
+              <div class="image">
+                <img
+                  src="{% static 'image/imageRemember.jpg' %}"
+                  alt=""
+                />
+              </div>
+              <div class="username">
+                <span>nguyenthuchoang</span>
+              </div>
+            </div>
+          </div>
+          <div class="lessonComponent-item" data-lesson-id="3">
+            <div class="lessonComponent-item__header">
+              <div class="label">
+                <span>Từ vựng sách listening 1</span>
+              </div>
+              <div class="count">
+                <span>150 thuật ngữ</span>
+              </div>
+            </div>
+            <div class="lessonComponent-item__footer">
+              <div class="image">
+                <img
+                  src="{% static 'image/imageRemember.jpg' %}"
+                  alt=""
+                />
+              </div>
+              <div class="username">
+                <span>nguyenthuchoang</span>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+{% endblock body_data %}
+
+
+    {% block custom_js %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".lessonComponent-item").on("click", function () {
+          var lessonId = $(this).data("lesson-id"); // Lấy id của lesson từ data attribute
+          var redirectUrl = "/detail/" + lessonId + "/"; // URL của trang chi tiết lesson
+
+          // Chuyển hướng đến URL mong muốn
+          window.location.href = redirectUrl;
+        });
+      });
+    </script>
+    {% endblock custom_js %}
+
+
+

@@ -82,12 +82,12 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test_django',
         "USER": "root",
-        "PASSWORD": "",
+        "PASSWORD": "thuchoang2003",
         "HOST": "localhost",
         "POST": '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        },
     }
 }
 

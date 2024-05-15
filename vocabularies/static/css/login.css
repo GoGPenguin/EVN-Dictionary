@@ -1,0 +1,213 @@
+.login-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.login-container .login-left {
+  width: 50%;
+  height: 100vh;
+  position: relative;
+}
+.login-container .login-left img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  object-fit: cover;
+  object-position: center;
+}
+.login-container .login-left .login-left__text {
+  position: absolute;
+  width: 40%;
+  height: fit-content;
+  left: 5%;
+  top: 10%;
+}
+.login-container .login-left .login-left__text .title {
+  position: absolute;
+  font-size: 40px;
+  color: black;
+  font-weight: 600;
+}
+.login-container .login-left .logo {
+  position: absolute;
+  bottom: 7%;
+  left: 10%;
+  font-size: 50px;
+  color: white;
+  font-weight: 500;
+}
+.login-container .login-right {
+  width: 50%;
+  height: 100%;
+  padding: 0px auto;
+}
+.login-container .login-right .div-login {
+  padding: 20px 100px;
+}
+.login-container .login-right .div-login .div-threeBtn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px 0px;
+  gap: 10px;
+}
+.login-container .login-right .div-login .div-threeBtn .item {
+  width: 100%;
+  height: 60px;
+  font-size: 17px;
+  font-weight: 500;
+  border: 2px solid #ccc c;
+  color: #586380;
+  border-radius: "10px";
+}
+.login-container .login-right .div-login .formInput .inputEmail {
+  height: 50px;
+  background-color: #f6f7fb;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+.login-container .login-right .div-login .formInput .inputPassword {
+  height: 50px;
+  background-color: #f6f7fb;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+.login-container .login-right .div-login .formInput .btnLogin {
+  width: 100%;
+  height: 60px;
+  background-color: #4255ff;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 10px;
+}
+.ant-btn:hover {
+  background-color: #f6f7fb;
+}
+#formRegister_password {
+  background-color: #f6f7fb;
+  height: "50px";
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+#formLogin_Password {
+  background-color: #f6f7fb;
+  height: "50px";
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+@media only screen and (max-width: 523px) {
+  .login-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+  }
+  .login-container .login-left {
+    width: 50%;
+    height: 905px;
+    position: relative;
+    display: none;
+  }
+  .login-container .login-left img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: center;
+  }
+  .login-container .login-left .login-left__text {
+    position: absolute;
+    width: 40%;
+    height: fit-content;
+    left: 5%;
+    top: 10%;
+  }
+  .login-container .login-left .login-left__text .title {
+    position: absolute;
+    font-size: 40px;
+    color: black;
+    font-weight: 600;
+  }
+  .login-container .login-left .logo {
+    position: absolute;
+    bottom: 7%;
+    left: 10%;
+    font-size: 50px;
+    color: white;
+    font-weight: 500;
+  }
+  .login-container .login-right {
+    width: 100%;
+    height: 100%;
+    padding: 0px 0px;
+  }
+  .login-container .login-right .div-login {
+    padding: 10px 20px;
+  }
+  .login-container .login-right .div-login .div-threeBtn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0px;
+    gap: 5px;
+  }
+  .login-container .login-right .div-login .div-threeBtn .item {
+    width: 100%;
+    height: 60px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 2px solid #ccc;
+    color: #586380;
+    border-radius: "10px";
+  }
+  .login-container .login-right .div-login .formInput .inputEmail {
+    height: 50px;
+    background-color: #f6f7fb;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
+  }
+  .login-container .login-right .div-login .formInput .inputPassword {
+    height: 50px;
+    background-color: #f6f7fb;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
+  }
+  .login-container .login-right .div-login .formInput .btnLogin {
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    background-color: #4255ff;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 10px;
+  }
+
+  .ant-btn:hover {
+    background-color: #f6f7fb;
+  }
+  #formRegister_password {
+    background-color: #f6f7fb;
+    height: "50px";
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
+  }
+  #formLogin_Password {
+    background-color: #f6f7fb;
+    height: "50px";
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 10px;
+  }
+}

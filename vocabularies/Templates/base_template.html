@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock title %}</title>
+    {% block custom_css %} {% endblock custom_css %}
+        <link rel="stylesheet" href="{%static 'css/home.css' %}" />
+    <link rel="stylesheet" href="{%static 'css/global.css' %}" />
+    <link rel="stylesheet" href="{%static 'css/header.css' %}" />
+        <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    
+    <style>
+      .custom-flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-evenly;
+        gap: 30px; /* Thêm khoảng cách 30px giữa các phần tử */
+      }
+      .logo {
+        font-size: 30px;
+        font-weight: 700;
+        color: #4255ff;
+        cursor: pointer;
+      }
+      .text_home {
+        color: black;
+        font-size: 1.1rem;
+        font-weight: 400;
+        margin-top: 5px;
+      }
+      .input_search {
+        padding: "0px 30px";
+        border-radius: "20px" !important;
+        background-color: "#f6f7fb";
+        font-size: "17px";
+        font-weight: "500";
+      }
+    </style>
+  </head>
+  <body>
+    {% include 'header.html' %}
+    {% block body_data %} {% endblock body_data %} 
+    {% block custom_js %}
+    {% endblock custom_js %}
+
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+   
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+vjx0bL0L1U5Pmg/IlCJgHMOvPpmm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

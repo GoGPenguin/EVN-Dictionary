@@ -1,0 +1,46 @@
+.div_header_search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  height: 50px;
+}
+.div_header_search-value_en {
+  font-size: 1.8rem;
+  color: #0a7be9;
+  font-weight: 500;
+  height: fit-content;
+}
+
+.div_header_search-spelling {
+  height: fit-content;
+  font-size: 1.2rem;
+}
+
+.div_header_search-speaker {
+  cursor: pointer;
+}
+.main-content-search {
+}
+.type {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.div-meaning {
+  padding: 5px 20px;
+}
+.meaning {
+  padding: 5px 0px;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #1198b6;
+  font-weight: 500;
+}
+.example {
+  font-size: 17px;
+  font-weight: 400;
+}
+.explain {
+  font-size: 1.3rem;
+  font-weight: 600;
+}

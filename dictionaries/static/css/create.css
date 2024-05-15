@@ -1,0 +1,180 @@
+.item {
+  width: 100%;
+  height: 150px;
+  padding: 10px 0px;
+  background-color: white;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+.item .header_input {
+  padding: 0px 20px;
+  height: 40px;
+}
+.item .header_input .index {
+  color: #939bb4;
+  font-size: 19px;
+}
+.item .partition {
+  width: 100%;
+  height: 2px;
+  background-color: #ccc c;
+}
+.item .content {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  /* margin-top: 25px; */
+}
+.item .content .left {
+  width: 50%;
+}
+.item .content .left .inputText {
+  width: 100%;
+  height: 40px;
+}
+.item .content .left .divider {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  margin: 5px 0px 10px 0px;
+}
+.item .content .left .footer {
+  color: #939bb4;
+  font-size: 14px;
+}
+.item .content .left .inputText:hover + .divider {
+  background-color: #ffcd1f;
+  height: 3px;
+}
+.item .content .right {
+  width: 50%;
+}
+.item .content .right .inputText {
+  width: 100%;
+  height: 40px;
+}
+.item .content .right .divider {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  margin: 5px 0px 10px 0px;
+}
+.item .content .right .footer {
+  color: #939bb4;
+  font-size: 14px;
+}
+.item .content .right .inputText:hover + .divider {
+  background-color: #ffcd1f;
+  height: 3px;
+}
+
+.div-AddCard {
+  width: 100%;
+  height: 120px;
+  background-color: white;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+.div-AddCard .content {
+  width: 100px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.div-AddCard .content .text {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.div-AddCard .footer {
+  width: 100px;
+  height: 4px;
+  background-color: #4dcfc0;
+}
+.div-AddCard .content:hover + .footer {
+  background-color: #ffcd1f;
+}
+.div-AddCard .content:hover span {
+  color: #ffcd1f;
+}
+.divSubmit {
+  display: flex;
+  justify-content: flex-end;
+  padding: 50px 0px;
+}
+.divSubmit .btnSubmit {
+  width: 150px;
+  height: 50px;
+  border: 1px solid #ccc c;
+  background-color: #4255ff;
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 5px;
+}
+.divSubmit .btnSubmit:hover {
+  background-color: #2f43f1;
+}
+@media only screen and (max-width: 523px) {
+  .div-AddCard {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .div-AddCard .content {
+    width: 100px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .div-AddCard .content .text {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .div-AddCard .footer {
+    width: 100px;
+    height: 4px;
+    background-color: #4dcfc0;
+  }
+  .div-AddCard .content:hover + .footer {
+    background-color: #ffcd1f;
+  }
+  .div-AddCard .content:hover span {
+    color: #ffcd1f;
+  }
+  .divSubmit {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 0px;
+  }
+  .divSubmit .btnSubmit {
+    width: 150px;
+    height: 45px;
+    border: 1px solid #ccc c;
+    background-color: #4255ff;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 5px;
+  }
+  .divSubmit .btnSubmit:hover {
+    background-color: #2f43f1;
+  }
+}

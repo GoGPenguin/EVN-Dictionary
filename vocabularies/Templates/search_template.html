@@ -1,0 +1,110 @@
+
+{% extends 'base_template.html' %} 
+{% load static %}
+{% block title %} 
+Search
+{% endblock title %} 
+{% block custom_css %} 
+<link rel="stylesheet" href="{%static 'css/search.css' %}" />
+{% endblock custom_css %}
+{% block body_data %}
+    <div
+      class="main-content-search"
+      style="
+        margin-top: 70px !important;
+        max-width: 1440px;
+        height: calc(100vh - 70px);
+        margin: 0 auto;
+        padding: 50px 200px;
+      "
+    >
+      <div class="div_header_search">
+        <div class="div_header_search-value_en">{{search_query}}</div>
+        {% for result in results %}
+        <div class="div_header_search-spelling">/{{ result.spelling }}/</div>
+        {% endfor %}
+        <div class="div_header_search-speaker">
+          <i class="fa-solid fa-volume-high" id = 'volumeIcon'></i>
+        </div>
+      </div>
+      <hr class="hr" />
+      {% for result in results %}
+      <div class="main-content-search">
+        <div class="type">{{ result.pos.pos_type }}</div>
+        <div class="div-meaning">
+           <div class="explain">{{ result.definition }}</div>
+          <div class="meaning">
+            <i class="fa-solid fa-square" style="font-size: 1rem"></i> {{ result.vocab_vn }}
+          </div>
+          <div class="example">{{ result.example }}</div>
+         
+        </div>
+
+        <!-- <div class="div-meaning">
+           <div class="explain">
+            hãng hàng không này có một lịch sử không hay (hay xảy ra tai nạn)
+          </div>
+          <div class="meaning">
+            <i class="fa-solid fa-square" style="font-size: 1rem"></i> Lý lịch
+          </div>
+          <div class="example">the airline had a bad safety record</div>
+         
+        </div>
+
+        <div class="div-meaning">
+           <div class="explain">phá kỷ lục</div>
+          <div class="meaning">
+            <i class="fa-solid fa-square" style="font-size: 1rem"></i> kỷ lục
+          </div>
+          <div class="example">beat (break) a record</div>
+         
+        </div> -->
+      </div>
+      {% endfor %}
+      <!-- <div class="main-content-search">
+        <div class="type">Động từ</div>
+        <div class="div-meaning">
+           <div class="explain">ghi biên bản hội nghị</div>
+          <div class="meaning">
+            <i class="fa-solid fa-square" style="font-size: 1rem"></i> ghi, ghi
+            chép lại
+          </div>
+          <div class="example">record the proceedings of a meeting</div>
+         
+        </div>
+
+        <div class="div-meaning">
+           <div class="explain">
+            thu một bản nhạc lên băng ghi âm
+          </div>
+          <div class="meaning">
+            <i class="fa-solid fa-square" style="font-size: 1rem"></i> ghi, thu (vào đĩa hát)
+          <div class="example">record a piece of music on tape</div>
+         
+        </div>
+       
+      </div> -->
+    </div>
+
+    
+{% endblock body_data %}
+
+
+    {% block custom_js %}
+        <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const volumeIcon = document.getElementById('volumeIcon');
+    const wordDiv = document.querySelector('.div_header_search-value_en');
+    const wordToSpeak = wordDiv.textContent.trim(); // Lấy nội dung và loại bỏ khoảng trắng đầu cuối
+
+    volumeIcon.addEventListener('click', function() {
+      // Tạo một đối tượng âm thanh mới và phát
+      const speech = new SpeechSynthesisUtterance(wordToSpeak);
+      window.speechSynthesis.speak(speech);
+    });
+  });
+    </script>
+    {% endblock custom_js %}
+
+
+

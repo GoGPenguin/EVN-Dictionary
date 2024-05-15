@@ -1,0 +1,106 @@
+
+    <header class="header">
+      <div class="container">
+        <div class="custom-flex-container">
+          <a
+            href="/"
+            class="d-flex align-items-center mb-2 mb-lg-0 text-decoration-none"
+          >
+            <svg
+              class="bi me-2"
+              width="40"
+              height="32"
+              role="img"
+              aria-label="Bootstrap"
+            >
+              <use xlink:href="#bootstrap"></use>
+            </svg>
+          </a>
+          <ul
+            class="nav col-12 col-lg-auto mb-2 justify-content-center align-items-center"
+          >
+            <li>
+              <a href="/" class="nav-link px-2 logo_header">Quizlet</a>
+            </li>
+            <li>
+              <a href="/" class="nav-link text_home">Trang Chủ</a>
+            </li>
+          </ul>
+
+          <div class="col-12 col-lg-4 mb-3 mb-lg-0 me-lg-3">
+            <form
+              method="POST"
+              action="/search"
+              id="searchForm"
+            >
+              {% csrf_token %}
+              <input
+                type="search"
+                class="form-control form-control-dark input_search"
+                placeholder="Tra cứu từ vựng ..."
+                aria-label="Search"
+                style="
+                  border-radius: 15px;
+
+                  font-size: 17px;
+                  font-weight: 400;
+                "
+                id="searchInput"
+                name="searchInput"
+              />
+            </form>
+          </div>
+
+          {% if userData.authentication %}
+          <div style="display: flex;justify-content: center;align-items: center;gap:5px;"> <a
+              class="btn btn-primary me-2"
+              href="create"
+              role="button"
+              style="border-radius: 50%"
+              >+</a
+            >
+          <div>Hi, {{user.fullname}}</div></div>
+         
+          <a class="btn btn-warning me-2" href="/logout" role="button"
+              >Đăng xuất</a
+            >
+
+          {% else %}
+          <div class="text-end">
+            <a
+              class="btn btn-primary me-2"
+              href="/account/login"
+              role="button"
+              style="border-radius: 50%"
+              >+</a
+            >
+            <a class="btn btn-outline-primary me-2" href="/account/login" role="button"
+              >Login</a
+            >
+            <a class="btn btn-warning me-2" href="/account/register" role="button"
+              >Sign-up</a
+            >
+          </div>
+          {% endif %}
+          <!-- <div class="text-end">
+            <a
+              class="btn btn-primary me-2"
+              href="create"
+              role="button"
+              style="border-radius: 50%"
+              >+</a
+            >
+            <a class="btn btn-outline-primary me-2" href="login" role="button"
+              >Login</a
+            >
+            <a class="btn btn-warning me-2" href="register" role="button"
+              >Sign-up</a
+            >
+          </div> -->
+        </div>
+      </div>
+    </header>
+    
+
+
+

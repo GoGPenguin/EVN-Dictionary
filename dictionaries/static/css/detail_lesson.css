@@ -1,0 +1,132 @@
+.div-showMyListCard {
+  max-width: 1440px;
+  margin: 0px 20% 0 15%;
+  padding-top: 20px;
+}
+.div-showMyListCard .label span {
+  font-size: 1.4rem;
+}
+.div-showMyListCard .div-main {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px 5px 0px;
+  gap: 10px;
+  padding-bottom: 5px;
+}
+.div-showMyListCard .div-main .item {
+  width: 90%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+}
+.div-showMyListCard .div-main .item .item_left {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.div-showMyListCard .div-main .item .item_left span {
+  display: block;
+  height: 40px;
+  font-weight: 100;
+  font-size: 1.1rem;
+  line-height: 40px;
+  font-weight: 400;
+}
+.div-showMyListCard .div-main .item .item_right {
+  flex: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-left: 2px solid #f1f2f5;
+}
+.div-showMyListCard .div-main .item .item_right span {
+  display: block;
+  height: 40px;
+  width: 100%;
+  line-height: 40px;
+  padding-left: 30px;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.div-showMyListCard .div-main .item .action {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+@media only screen and (max-width: 523px) {
+  .div-showMyListCard {
+    max-width: 100%;
+    margin: 0px 5px 0 5px;
+    padding-top: 5px;
+  }
+  .div-showMyListCard .label {
+    padding-left: 10px;
+  }
+  .div-showMyListCard .label span {
+    font-size: 1.1rem;
+  }
+  .div-showMyListCard .div-main {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0px 5px 0px;
+    gap: 10px;
+    padding-bottom: 5px;
+  }
+  .div-showMyListCard .div-main .item {
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+  }
+  .div-showMyListCard .div-main .item .item_left {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: fit-content;
+  }
+  .div-showMyListCard .div-main .item .item_left span {
+    display: block;
+    height: fit-content;
+    font-weight: 100;
+    font-size: 1.1rem;
+    line-height: 40px;
+  }
+  .div-showMyListCard .div-main .item .item_right {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-left: 2px solid #f1f2f5;
+    height: 100%;
+  }
+  .div-showMyListCard .div-main .item .item_right span {
+    display: block;
+    height: fit-content;
+    width: 100%;
+    line-height: 40px;
+    padding-left: 30px;
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+  .div-showMyListCard .div-main .item .action {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}

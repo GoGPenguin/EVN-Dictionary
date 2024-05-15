@@ -1,0 +1,205 @@
+
+{% extends 'base_template.html' %} 
+{% load static %}
+{% block title %} 
+Search
+{% endblock title %} 
+{% block custom_css %} 
+<link rel="stylesheet" href="{%static 'css/detail_lesson.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+{% endblock custom_css %}
+{% block body_data %}
+    <div
+      style="
+        width: 100%;
+        background-color: #f6f7fb;
+        height: 100vh;
+        margin-top: 70px;
+        padding-bottom: 30px;
+      "
+      class="div-main-detail"
+    >
+      <div class="div-showMyListCard">
+        <div
+          class="label"
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          "
+        >
+          <span>Các thuật ngữ trong từ điển này:</span>
+          <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 20px;
+              padding-right: 100px;
+            "
+          >
+            <div>
+              <i
+                class="fa-solid fa-pen-to-square"
+                style="font-size: 1.2rem; cursor: pointer"
+                id="edit-icon"
+              ></i>
+              <input type="text" hidden value="{{ dictionary_id }}" id="lesson_id">
+            </div>
+            <div>
+              <i
+                class="fa-solid fa-trash"
+                style="color: red; font-size: 1.2rem; cursor: pointer"
+                id="delete-icon"
+              ></i>
+            </div>
+          </div>
+        </div>
+          {% for vocabulary in vocabularies %}
+        <div class="div-main">
+
+  <div class="item">
+    <div class="item_left">
+      <span class="text">{{ vocabulary.vocab_en }}</span>
+    </div>
+    <div class="item_right">
+      <span class="text">{{ vocabulary.vocab_vn }}</span>
+    </div>
+    <div class="action">
+      <i class="fa-solid fa-volume-high" style="cursor: pointer"></i>
+    </div>
+  </div>
+
+</div>
+  {% endfor %}
+        <!-- <div class="div-main">
+          <div class="item">
+            <div class="item_left">
+              <span class="text">university</span>
+            </div>
+            <div class="item_right">
+              <span class="text">Đại học</span>
+            </div>
+            <div class="action">
+              <i class="fa-solid fa-volume-high" style="cursor: pointer"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="div-main">
+          <div class="item">
+            <div class="item_left">
+              <span class="text">Record</span>
+            </div>
+            <div class="item_right">
+              <span class="text">Hồ sơ</span>
+            </div>
+            <div class="action">
+              <i class="fa-solid fa-volume-high" style="cursor: pointer"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="div-main">
+          <div class="item">
+            <div class="item_left">
+              <span class="text">Patient</span>
+            </div>
+            <div class="item_right">
+              <span class="text">Bệnh nhân</span>
+            </div>
+            <div class="action">
+              <i class="fa-solid fa-volume-high" style="cursor: pointer"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="div-main">
+          <div class="item">
+            <div class="item_left">
+              <span class="text">User</span>
+            </div>
+            <div class="item_right">
+              <span class="text">Người dùng</span>
+            </div>
+            <div class="action">
+              <i class="fa-solid fa-volume-high" style="cursor: pointer"></i>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+{% endblock body_data %}
+
+
+    {% block custom_js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const icons = document.querySelectorAll(".fa-volume-high");
+        icons.forEach((icon) => {
+          icon.addEventListener("click", function () {
+            const parent = this.closest(".item");
+            const word = parent
+              .querySelector(".item_left .text")
+              .textContent.trim();
+
+            // Tạo một đối tượng SpeechSynthesisUtterance
+            const utterance = new SpeechSynthesisUtterance(word);
+            // utterance.lang = "vi-VN"; // Thiết lập ngôn ngữ, có thể điều chỉnh theo yêu cầu
+            window.speechSynthesis.speak(utterance); // Phát ra giọng nói
+          });
+        });
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+    const editIcon = document.getElementById('edit-icon');
+    const lessonIdInput = document.getElementById('lesson_id');
+
+    editIcon.addEventListener('click', function() {
+        // Lấy giá trị lesson-id từ input
+        const lessonId = lessonIdInput.value;
+        if (lessonId) {
+            window.location.href = `/edit/${lessonId}/`;
+        } else {
+            console.error('Lesson ID is missing or invalid.');
+        }
+    });
+});
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+    const deleteIcon = document.getElementById('delete-icon');
+    const lessonIdInput = document.getElementById('lesson_id');
+
+    deleteIcon.addEventListener('click', function() {
+        // Lấy giá trị lesson-id từ input
+        const lessonId = lessonIdInput.value;
+        if (lessonId) {
+            window.location.href = `/delete/${lessonId}/`;
+        } else {
+            console.error('Dictionary ID is missing or invalid.');
+        }
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Lấy chiều cao thực tế của phần tử
+    const elementHeight = document.querySelector('.div-main-detail').scrollHeight;
+    
+    // Lấy chiều cao của cửa sổ trình duyệt
+    const windowHeight = window.innerHeight;
+    
+    // So sánh và thiết lập chiều cao cho phần tử
+    if (elementHeight > windowHeight) {
+        document.querySelector('.div-main-detail').style.height = '100%';
+    }
+});
+    </script>
+    {% endblock custom_js %}
+
+
+
