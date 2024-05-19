@@ -11,6 +11,8 @@ urlpatterns = [
     path('handle_edit_dictionary',handle_edit_dictionary,name='handle_edit_dictionary'),
     path('delete/<str:dictionary_id>/', delete_dictionary, name='delete_dictionary'),
     path('logout/', handle_logout, name='logout'),
+    path('test', test_create, name='test_create'),
+    path('upload-data', upload_data, name='upload_data'),
     
 
 ]

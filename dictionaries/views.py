@@ -3,6 +3,9 @@ from .models import ListVocabulary, MyVocab
 from accounts.models import UserAccount
 import uuid
 from django.contrib.auth import logout
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+import json
 # Create your views here.
 def get_view_home(request):
     user_id = request.session.get('user_id')
@@ -143,5 +146,30 @@ def handle_logout(request):
     # Redirect hoặc trả về response tùy vào logic của ứng dụng
     return redirect('/')
 
+
+def test_create(request):
+    return render(request, 'test_create.html')
+
+
+
+@csrf_exempt
+def upload_data(request):
+    if request.method == 'POST':
+        data = json.loads(request.body)
+
+        user_id = request.session.get('user_id')
+        user = UserAccount.objects.get(id=user_id)
+        random_uuid = uuid.uuid4()
+        list_id = str(random_uuid)[:8]
+        new_list = ListVocabulary.objects.create(list_id=list_id, user=user, list_name=data['name_dictionary'])
+
+        # Lưu từ vựng vào dictionary mới
+        for item in data['data']:
+            MyVocab.objects.create(listVocab=new_list, vocab_en=item['Value_en'], vocab_vn=item['Value_vi'])
+        print(data)
+        return JsonResponse({'message': 'Data saved successfully!'})
+        # return JsonResponse({'status': 'success'})
+    else:
+        return JsonResponse({'error': 'Invalid request'}, status=400)
 
     
