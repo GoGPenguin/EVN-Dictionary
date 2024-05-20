@@ -5,6 +5,7 @@ import uuid
 from django.contrib.auth import logout
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from django.core import serializers
 import json
 # Create your views here.
 def get_view_home(request):
@@ -61,12 +62,15 @@ def handle_create(request):
         return redirect('/home')
     return render(request,'create_template.html')
 
-def dictionary_detail(request,dictionary_id):
+def dictionary_detail(request, dictionary_id):
+    dictionary = get_object_or_404(ListVocabulary, list_id=dictionary_id)
     vocabularies = MyVocab.objects.filter(listVocab__list_id=dictionary_id)
-
+    vocabularies_json = serializers.serialize('json', vocabularies)
     context = {
         'dictionary_id': dictionary_id,
+        'dictionary_name': dictionary.list_name,  
         'vocabularies': vocabularies,
+        'vocabularies_json':  vocabularies_json  
     }
     return render(request, 'detail_dictionary_template.html', context)
 

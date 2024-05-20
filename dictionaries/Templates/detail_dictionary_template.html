@@ -10,6 +10,84 @@ Search
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
+    <style>
+      .scene {
+  display: inline-block;
+  width: 80%;
+  height: 400px;
+  margin: 30px 0;
+  perspective: 600px;
+  border: none;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  /* transition: transform 1s; */
+  transition: transform 0.4s ease-in-out;
+  border-radius: 20px !important;
+  border: none !important;
+}
+
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 400px;
+  color: black;
+  text-align: center;
+  font-size: 40px;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+
+.card__face--front {
+  background: white;
+}
+
+.card__face--back {
+  background: white;
+  transform: rotateY(180deg);
+}
+.action{
+display:flex; justify-content: center; align-items: center;
+width: 80%;
+gap:30px;
+
+
+}
+.action .btnLeft{
+  width: 50px;
+  height: 50px;
+  border: 1px solid #bdbdbd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.action .count{
+  font-size: 1.4rem;
+}
+.action .btnRight{
+  width: 50px;
+  height: 50px;
+  border: 1px solid #bdbdbd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+    </style>
 {% endblock custom_css %}
 {% block body_data %}
     <div
@@ -22,6 +100,28 @@ Search
       "
       class="div-main-detail"
     >
+
+           <div class="flash_card" style="    max-width: 1440px;
+    margin: 0px 20% 0 15%;
+    padding-top: 20px;">
+        <span class="title" style="width: 100%;
+    font-size: 2rem;
+    display: block;
+    font-weight: 700;">{{dictionary_name}}</span>
+          <div class="scene scene--card">
+  <div class="card" style="height: 100%;">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+
+    </div>
+        <div class="action" >
+          <div class="btnLeft"><i class="fa-solid fa-arrow-left"></i></div>
+          <div class="count">1/{{ vocabularies|length }}</div>
+          <div class="btnRight"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+        <hr>
+      </div>
       <div class="div-showMyListCard">
         <div
           class="label"
@@ -74,61 +174,7 @@ Search
 
 </div>
   {% endfor %}
-        <!-- <div class="div-main">
-          <div class="item">
-            <div class="item_left">
-              <span class="text">university</span>
-            </div>
-            <div class="item_right">
-              <span class="text">Đại học</span>
-            </div>
-            <div class="action">
-              <i class="fa-solid fa-volume-high" style="cursor: pointer"></i>
-            </div>
-          </div>
-        </div>
 
-        <div class="div-main">
-          <div class="item">
-            <div class="item_left">
-              <span class="text">Record</span>
-            </div>
-            <div class="item_right">
-              <span class="text">Hồ sơ</span>
-            </div>
-            <div class="action">
-              <i class="fa-solid fa-volume-high" style="cursor: pointer"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="div-main">
-          <div class="item">
-            <div class="item_left">
-              <span class="text">Patient</span>
-            </div>
-            <div class="item_right">
-              <span class="text">Bệnh nhân</span>
-            </div>
-            <div class="action">
-              <i class="fa-solid fa-volume-high" style="cursor: pointer"></i>
-            </div>
-          </div>
-        </div>
-
-        <div class="div-main">
-          <div class="item">
-            <div class="item_left">
-              <span class="text">User</span>
-            </div>
-            <div class="item_right">
-              <span class="text">Người dùng</span>
-            </div>
-            <div class="action">
-              <i class="fa-solid fa-volume-high" style="cursor: pointer"></i>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
 {% endblock body_data %}
@@ -153,6 +199,8 @@ Search
           });
         });
       });
+
+      
       document.addEventListener('DOMContentLoaded', function() {
     const editIcon = document.getElementById('edit-icon');
     const lessonIdInput = document.getElementById('lesson_id');
@@ -198,6 +246,58 @@ document.addEventListener("DOMContentLoaded", function() {
         document.querySelector('.div-main-detail').style.height = '100%';
     }
 });
+    </script>
+     <script>
+//       var cards = document.querySelectorAll('.card');
+
+// [...cards].forEach((card)=>{
+//   card.addEventListener( 'click', function() {
+//     card.classList.toggle('is-flipped');
+//   });
+// });
+
+
+
+         const vocabularies = JSON.parse('{{ vocabularies_json|safe|escapejs }}');
+         console.log(vocabularies);
+    let currentIndex = 0;
+    const card = document.querySelector('.card');
+    const frontFace = card.querySelector('.card__face--front');
+    const backFace = card.querySelector('.card__face--back');
+    const countElement = document.querySelector('.count');
+    
+    function updateFlashcard(index) {
+      const vocabulary = vocabularies[index].fields;
+      frontFace.textContent = vocabulary.vocab_en;
+      backFace.textContent = vocabulary.vocab_vn;
+      countElement.textContent = `${index + 1}/${vocabularies.length}`;
+    }
+
+    updateFlashcard(currentIndex);
+
+    card.addEventListener('click', function() {
+      card.classList.toggle('is-flipped');
+    });
+
+    document.querySelector('.btnLeft').addEventListener('click', function() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateFlashcard(currentIndex);
+        if (card.classList.contains('is-flipped')) {
+          card.classList.remove('is-flipped');
+        }
+      }
+    });
+
+    document.querySelector('.btnRight').addEventListener('click', function() {
+      if (currentIndex < vocabularies.length - 1) {
+        currentIndex++;
+        updateFlashcard(currentIndex);
+        if (card.classList.contains('is-flipped')) {
+          card.classList.remove('is-flipped');
+        }
+      }
+    });
     </script>
     {% endblock custom_js %}
 
