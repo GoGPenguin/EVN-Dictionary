@@ -30,6 +30,7 @@
             font-size: 1.2rem !important; /* Thay đổi kích thước phông chữ tại đây */
     }
     </style>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <div class="login-container">
@@ -76,6 +77,7 @@
             <hr />
             <div style="text-align: center">Or Email</div>
           </div>
+          
 
           <div class="formInput">
             <form name="formLogin" id ='formLogin' method="post" action="/account/handle_login">
@@ -135,6 +137,45 @@
         window.location.href = '/';
     });
 });
+
+    $(document).ready(function () {
+        $('#formLogin').on('submit', function (event) {
+          // Clear previous errors
+          $('.form-control').removeClass('is-invalid');
+          $('.invalid-feedback').remove();
+
+          // Get the values of the input fields
+          var email = $('#inputEmail').val().trim();
+          var password = $('#inputPassword').val().trim();
+
+          // Regular expression for validating email
+          var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+          // Validation flags
+          var isValid = true;
+
+          // Validate email
+          if (email === '' || !emailPattern.test(email)) {
+            $('#inputEmail').addClass('is-invalid');
+            $('#inputEmail').after('<div class="invalid-feedback">Vui lòng nhập địa chỉ email hợp lệ.</div>');
+            isValid = false;
+          }
+
+          // Validate password
+          if (password === '') {
+            $('#inputPassword').addClass('is-invalid');
+            $('#inputPassword').after('<div class="invalid-feedback">Vui lòng nhập mật khẩu.</div>');
+            isValid = false;
+          }
+
+          // If both fields are valid, submit the form
+          if (isValid) {
+            this.submit();
+          } else {
+            event.preventDefault();
+          }
+        });
+      });
     </script>
   </body>
 </html>

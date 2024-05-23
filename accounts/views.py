@@ -27,7 +27,7 @@ def handle_register(request):
         user = UserAccount.objects.create_user(username=email,fullname= email.split('@')[0],password=password)
         if(user):
             messages.success(request, "Registration successful.")
-            return redirect('login')  # Chuyển hướng tới trang chủ hoặc trang khác sau khi đăng ký thành công
+            return redirect('/account/login')  # Chuyển hướng tới trang chủ hoặc trang khác sau khi đăng ký thành công
     
     return render(request, 'register.html')
 
@@ -48,7 +48,7 @@ def handle_login(request):
             return redirect('/home',{'user': user})  
         else:
             messages.error(request, "Email hoặc mật khẩu không chính xác.")
-            return redirect('login')
+            return redirect('/account/login')
     
     return render(request, 'login.html')
 
