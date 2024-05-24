@@ -17,12 +17,12 @@ def handle_register(request):
         # Kiểm tra nếu mật khẩu và xác nhận mật khẩu khớp
         if password != confirmPassword:
             messages.error(request, "Passwords do not match.")
-            return redirect('register')
+            return redirect('/account/register')
 
         # Kiểm tra nếu email đã tồn tại
         if UserAccount.objects.filter(username=email).exists():
             messages.error(request, "Email already exists.")
-            return redirect('register')
+            return redirect('/account/register')
 
         user = UserAccount.objects.create_user(username=email,fullname= email.split('@')[0],password=password)
         if(user):
